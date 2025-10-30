@@ -4,7 +4,7 @@ import (
 	"context"
 	"testing"
 
-	"github.com/andrewronscki/lib-golang-teste/pkg/cqrs"
+	"github.com/andrewronscki/lib-golang-teste/pkg/commons/cqrs"
 	"github.com/stretchr/testify/assert"
 	"go.uber.org/dig"
 )

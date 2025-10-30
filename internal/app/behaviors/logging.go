@@ -4,8 +4,8 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/andrewronscki/lib-golang-teste/pkg/cqrs"
-	"github.com/andrewronscki/lib-golang-teste/pkg/logger"
+	"github.com/andrewronscki/lib-golang-teste/pkg/commons/cqrs"
+	"github.com/andrewronscki/lib-golang-teste/pkg/commons/logger"
 )
 
 type LoggingBehavior struct{}

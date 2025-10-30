@@ -3,8 +3,8 @@ package behaviors
 import (
 	"context"
 
-	validation "github.com/andrewronscki/lib-golang-teste/internal/shared/validation"
-	"github.com/andrewronscki/lib-golang-teste/pkg/cqrs"
+	"github.com/andrewronscki/lib-golang-teste/pkg/commons/cqrs"
+	validation "github.com/andrewronscki/lib-golang-teste/pkg/commons/validation"
 )
 
 type ValidationBehavior struct{}

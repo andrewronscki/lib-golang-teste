@@ -1,7 +1,7 @@
 package behaviors
 
 import (
-	cqrsdig "github.com/andrewronscki/lib-golang-teste/pkg/cqrs-dig"
+	cqrsdig "github.com/andrewronscki/lib-golang-teste/pkg/commons/cqrs-dig"
 	"go.uber.org/dig"
 	"go.uber.org/multierr"
 )

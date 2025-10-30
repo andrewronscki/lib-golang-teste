@@ -2,9 +2,9 @@ package helloworld
 
 import (
 	"context"
-	"fmt"
 
-	"github.com/andrewronscki/lib-golang-teste/pkg/cqrs"
+	user "github.com/andrewronscki/lib-golang-teste/internal/user/domain"
+	"github.com/andrewronscki/lib-golang-teste/pkg/commons/cqrs"
 )
 
 type Command struct {
@@ -12,15 +12,13 @@ type Command struct {
 	LastName  string `json:"last_name"`
 }
 
-type CommandHandler struct {
-}
+type CommandHandler struct{}
 
 func (h *CommandHandler) Handle(ctx context.Context, command *Command) (*Model, error) {
-	name := fmt.Sprintf("%s %s", command.FirstName, command.LastName)
+	userCreated := user.NewUser(command.FirstName, command.LastName)
 
-	model := &Model{
-		Name: name,
-	}
+	model := &Model{}
+	userCreated.Marshal(model)
 
 	return model, nil
 }

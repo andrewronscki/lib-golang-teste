@@ -1,7 +1,7 @@
 package cqrsdig
 
 import (
-	"github.com/andrewronscki/lib-golang-teste/pkg/cqrs"
+	"github.com/andrewronscki/lib-golang-teste/pkg/commons/cqrs"
 	"go.uber.org/dig"
 )
 

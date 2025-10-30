@@ -4,7 +4,7 @@ import (
 	"context"
 
 	helloworld "github.com/andrewronscki/lib-golang-teste/internal/user/features/hello-world"
-	"github.com/andrewronscki/lib-golang-teste/pkg/cqrs"
+	"github.com/andrewronscki/lib-golang-teste/pkg/commons/cqrs"
 )
 
 type HandlerDTO struct {

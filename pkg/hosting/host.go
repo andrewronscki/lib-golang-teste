@@ -8,9 +8,12 @@ import (
 	"sync"
 	"syscall"
 	"time"
+
+	"github.com/gin-gonic/gin"
 )
 
 type Host struct {
+	Router  *gin.Engine
 	Workers []Worker
 	Addr    string
 	server  *http.Server
@@ -29,6 +32,24 @@ func (h *Host) Start() {
 		wg.Add(1)
 		worker := w
 		go worker.Run(ctx, wg.Done)
+	}
+
+	if h.Router != nil {
+		if h.Addr == "" {
+			h.Addr = ":8080"
+		}
+
+		h.server = &http.Server{
+			Addr:    h.Addr,
+			Handler: h.Router,
+		}
+
+		go func() {
+			if err := h.server.ListenAndServe(); err != nil && err != http.ErrServerClosed {
+				log.Printf("http server stopped")
+				cancel()
+			}
+		}()
 	}
 
 	<-ctx.Done()

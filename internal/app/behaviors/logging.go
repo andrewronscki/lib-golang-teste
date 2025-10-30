@@ -5,7 +5,7 @@ import (
 	"reflect"
 
 	"github.com/andrewronscki/lib-golang-teste/pkg/cqrs"
-	"github.com/andrewronscki/lib-golang-teste/pkg/datadog/logger"
+	"github.com/andrewronscki/lib-golang-teste/pkg/logger"
 )
 
 type LoggingBehavior struct{}

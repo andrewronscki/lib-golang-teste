@@ -13,10 +13,9 @@ import (
 )
 
 type Host struct {
-	Router  *gin.Engine
-	Workers []Worker
-	Addr    string
-	server  *http.Server
+	Router *gin.Engine
+	Addr   string
+	server *http.Server
 }
 
 func (h *Host) Start() {
@@ -27,12 +26,6 @@ func (h *Host) Start() {
 	defer stop()
 
 	wg := &sync.WaitGroup{}
-
-	for _, w := range h.Workers {
-		wg.Add(1)
-		worker := w
-		go worker.Run(ctx, wg.Done)
-	}
 
 	if h.Router != nil {
 		if h.Addr == "" {

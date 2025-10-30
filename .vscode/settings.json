@@ -1,0 +1,5 @@
+{
+  "go.diagnostic.vulncheck": "Imports",
+  "remote.autoForwardPortsFallback": 0,
+  "CodeGPT.apiKey": "CodeGPT Plus Beta"
+}

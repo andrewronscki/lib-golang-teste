@@ -5,6 +5,7 @@ import (
 	"time"
 
 	"github.com/andrewronscki/lib-golang-teste/internal/shared/utils"
+	"github.com/andrewronscki/lib-golang-teste/pkg/commons/config"
 )
 
 type User struct {
@@ -18,6 +19,7 @@ func NewUser(firstName, lastName string) *User {
 	date := time.Now().UTC()
 
 	user := &User{
+		SiteID:    config.GetConfig().SiteID,
 		CreatedAt: date,
 		UpdatedAt: date,
 	}
